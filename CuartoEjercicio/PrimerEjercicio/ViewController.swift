@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     }
     
     private func isEvenNumber() -> Bool {
-        return number % 2 == 0
+        return number.isMultiple(of: 2)
     }
     
     private func setImageView() {

@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var brandLabel: UILabel!
     @IBOutlet weak var brandCarImageView: UIImageView!
-    private var carBrandList = ["Mazda","Ferrari","Ford"]
+    private let carBrandList = ["Mazda","Ferrari","Ford"]
     private var brandIndex = 0
     
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     }
     
     private func showBrand() {
-        brandLabel.text = String(carBrandList[brandIndex])
+        brandLabel.text = carBrandList[brandIndex]
     }
     
     

@@ -8,12 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var faceImageView: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
     private var number = 1
     private var myImage = "happy"
+    private var explotion = false
     
     
     override func viewDidLoad() {
@@ -29,20 +30,19 @@ class ViewController: UIViewController {
         updateNumber()
         updateImage()
         setImageView()
+        setExplotionState()
         showNumber()
     }
     
     private func updateNumber() {
         number = Int.random(in: 1...10)
     }
-       
+    
     private func updateImage() {
         if isWrongNumber() {
             myImage = "boom"
-            setExplotionState()
-        } else {
-            myImage = "happy"
-        }
+            explotion = true
+        } 
     }
     
     private func isWrongNumber() -> Bool {
@@ -50,8 +50,10 @@ class ViewController: UIViewController {
     }
     
     private func setExplotionState() {
-        numberLabel.isHidden = true
-        nextButton.isHidden = true
+        if explotion {
+            numberLabel.isHidden = true
+            nextButton.isHidden = true
+        }
     }
     
     private func setImageView() {

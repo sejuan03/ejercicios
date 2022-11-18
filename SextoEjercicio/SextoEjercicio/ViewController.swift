@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var nameLabel: UILabel!
-    private var nameList = ["Luis","Gloria","David","Natalia","Rocky"]
+    private let nameList = ["Luis","Gloria","David","Natalia","Rocky"]
     private var nameIndex = 0
     
     
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
     
     private func showName() {
-        nameLabel.text = String(nameList[nameIndex])
+        nameLabel.text = nameList[nameIndex]
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
