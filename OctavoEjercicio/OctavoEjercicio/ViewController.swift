@@ -28,9 +28,10 @@ class ViewController: UIViewController {
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         updateNumber()
+        explotionState()
         updateImage()
+        setViewExplotionState()
         setImageView()
-        setExplotionState()
         showNumber()
     }
     
@@ -38,9 +39,8 @@ class ViewController: UIViewController {
         number = Int.random(in: 1...10)
     }
     
-    private func updateImage() {
+    private func explotionState() {
         if isWrongNumber() {
-            myImage = "boom"
             explotion = true
         } 
     }
@@ -49,7 +49,13 @@ class ViewController: UIViewController {
         return number == 9
     }
     
-    private func setExplotionState() {
+    private func updateImage() {
+        if explotion {
+            myImage = "boom"
+        }
+    }
+    
+    private func setViewExplotionState() {
         if explotion {
             numberLabel.isHidden = true
             nextButton.isHidden = true
